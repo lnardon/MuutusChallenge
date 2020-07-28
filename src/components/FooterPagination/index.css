@@ -1,0 +1,14 @@
+.footerPaginationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 30px;
+}
+
+.tabsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}

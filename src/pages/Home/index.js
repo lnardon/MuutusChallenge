@@ -6,6 +6,7 @@ import "./index.css";
 import Header from "../../components/Header";
 import ComicCard from "../../components/ComicCard";
 import HomeCartSidebar from "../../components/HomeCartSidebar";
+import FooterPagination from "../../components/FooterPagination";
 
 function Home() {
   const [comics, setComics] = useState([]);
@@ -50,7 +51,8 @@ function Home() {
           );
         })}
       </div>
-      <HomeCartSidebar />
+      {/* <HomeCartSidebar /> */}
+      <FooterPagination pages={[1, 2, 3, 4]} />
     </div>
   );
 }
