@@ -32,10 +32,10 @@ function Home() {
       <div
         style={{
           display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          width: "80%",
+          width: "90%",
           flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         {comics.map((comic, index) => {
@@ -44,8 +44,7 @@ function Home() {
               key={index}
               thumbnail={comic.thumbnail}
               title={comic.title}
-              format={"Digital"}
-              price={"2.5"}
+              format={comic.prices}
             />
           );
         })}

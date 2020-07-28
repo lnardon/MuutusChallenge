@@ -33,29 +33,6 @@
   margin-bottom: 1rem;
 }
 
-.pricesContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
-  padding: 0rem 0.5rem;
-  background-color: #212121;
-  height: 1.5rem;
-  border-radius: 0.125rem;
-  margin-bottom: 1rem;
-}
-
-.format {
-  font-size: 0.75rem;
-  color: #e5e5e5;
-  font-weight: normal;
-}
-
-.price {
-  font-size: 1rem;
-  color: #e5e5e5;
-}
-
 .ctaBtn {
   width: 80%;
   height: 35px;
@@ -66,4 +43,5 @@
   font-weight: bold;
   color: #f1f1f1;
   background-color: rgba(2, 86, 166);
+  cursor: pointer;
 }

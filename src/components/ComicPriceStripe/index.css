@@ -1,0 +1,22 @@
+.comicPriceStripeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 0rem 0.5rem;
+  background-color: #212121;
+  height: 1.5rem;
+  border-radius: 0.125rem;
+  margin-bottom: 1rem;
+}
+
+.format {
+  font-size: 0.7rem;
+  color: #e5e5e5;
+  font-weight: normal;
+}
+
+.price {
+  font-size: 1rem;
+  color: #f1f1f1;
+}

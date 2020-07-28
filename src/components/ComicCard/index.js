@@ -1,8 +1,9 @@
 import React from "react";
 
 import "./index.css";
+import ComicPriceStripe from "../../components/ComicPriceStripe";
 
-function ComicCard({ thumbnail, title, format, price }) {
+function ComicCard({ thumbnail, title, format }) {
   return (
     <div className="comicCardContainer">
       <img
@@ -12,11 +13,20 @@ function ComicCard({ thumbnail, title, format, price }) {
       />
       <div className="comicInfo">
         <h2 className="comicTitle">{title}</h2>
-        <div className="pricesContainer">
-          <h4 className="format">{format}</h4>
-          <h3 className="price">{price}</h3>
-        </div>
-        <button className="ctaBtn"> Add to Cart </button>
+        {format.map((info, index) => {
+          return (
+            <ComicPriceStripe type={info.type} price={info.price} key={index} />
+          );
+        })}
+        <button
+          className="ctaBtn"
+          onClick={() => {
+            alert("ADDED TO CART");
+          }}
+        >
+          {" "}
+          Add to Cart{" "}
+        </button>
       </div>
     </div>
   );
