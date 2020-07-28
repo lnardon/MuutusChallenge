@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Components
@@ -7,12 +7,14 @@ import ShoppingCart from "./pages/ShoppingCart";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/cart" component={ShoppingCart} />
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/cart" component={ShoppingCart} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
