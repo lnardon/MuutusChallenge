@@ -16,6 +16,10 @@ function ShoppingCart() {
             return <ShoppingCartItem key={index} item={item.product} />;
           })}
         </div>
+        <div className="totalAmountContainer">
+          <h2 className="totalTitle">TOTAL:</h2>
+          <h2 className="totalAmount">$35</h2>
+        </div>
       </div>
     </div>
   );

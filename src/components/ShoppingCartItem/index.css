@@ -10,7 +10,6 @@
 
 .itemCoverContainer {
   display: flex;
-  flex: 3;
 }
 
 .productCover {
@@ -22,12 +21,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 3;
 }
 
 .itemAmountContainer {
   display: flex;
-  flex: 1;
   align-items: center;
   justify-content: center;
   width: 150px;
@@ -60,7 +57,6 @@
 
 .itemDeleteContainer {
   display: flex;
-  flex: 1;
   align-items: center;
   justify-content: center;
   width: 25px;
