@@ -20,8 +20,9 @@ function Home() {
       );
 
       // Fetches the Comics on the API
+      // In this case it's only fetching the X-men's comics (/1011109/)
       const response = await fetch(
-        `https://gateway.marvel.com:443/v1/public/comics?ts=${ts}&apikey=2883bc674f6f35a295e59e6ea3387d6d&hash=${hash}`
+        `https://gateway.marvel.com:443/v1/public/characters/1011109/comics?limit=25&ts=${ts}&apikey=2883bc674f6f35a295e59e6ea3387d6d&hash=${hash}`
       );
       const parsedResponse = await response.json();
       setComics(parsedResponse.data.results);
@@ -34,7 +35,10 @@ function Home() {
       <Header />
       <div className="comicsContainer">
         {comics.map((comic, index) => {
-          return <ComicCard key={index} product={comic} />;
+          // A little condition to avoid showing unavailable comics (The back-end should be the one filtering the list, not the front-end)
+          if (comic.prices[0].price > 0) {
+            return <ComicCard key={index} product={comic} />;
+          }
         })}
       </div>
     </div>

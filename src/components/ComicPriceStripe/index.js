@@ -3,11 +3,10 @@ import React from "react";
 import "./index.css";
 
 const ComicPriceStripe = ({ type, price }) => {
-  // A little function to transform the camelCase response to Regular English
-  const formatText = (t) => {
-    var text = t;
-    var result = text.replace(/([A-Z])/g, " $1");
-    var finalResult = result.charAt(0).toUpperCase() + result.slice(1);
+  // A little function to transform the camelCase response into Regular English
+  const formatText = (text) => {
+    const result = text.replace(/([A-Z])/g, " $1");
+    const finalResult = result.charAt(0).toUpperCase() + result.slice(1);
     return finalResult;
   };
 

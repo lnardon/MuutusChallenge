@@ -10,7 +10,6 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
-  console.log(state);
   switch (action.type) {
     case ADD_TO_CART:
       // Checks if the item already exists in the cart

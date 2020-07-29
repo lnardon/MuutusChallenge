@@ -135,11 +135,65 @@
 @media (max-width: 500px) {
   .shoppingCartItemContainer {
     flex-direction: column;
+    height: auto;
   }
 
   .productCover {
     width: 100%;
-
     height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .comicPrice {
+    margin-bottom: 1rem;
+  }
+
+  .amountButtons {
+    display: flex;
+    width: 100px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .amountBtn {
+    width: 25px;
+    height: 25px;
+    background-color: #ed1d24;
+    border: none;
+    color: #f1f1f1;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border-radius: 0.125rem;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .itemDeleteContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .removeBtn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #f1f1f1;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .buyBtnContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1rem 0rem;
+  }
+
+  .buyBtn {
+    width: 90%;
   }
 }

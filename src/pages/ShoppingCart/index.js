@@ -37,7 +37,12 @@ function ShoppingCart() {
         </div>
       </div>
       <div className="buyBtnContainer">
-        <button className="buyBtn" onClick={() => alert("Successful Purchase")}>
+        <button
+          className="buyBtn"
+          onClick={() =>
+            alert(`Successful Purchase of $ ${totalAmount.toFixed(2)}`)
+          }
+        >
           Finish Purchase
         </button>
       </div>
