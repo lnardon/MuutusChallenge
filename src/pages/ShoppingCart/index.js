@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 // Components && Style
@@ -19,6 +20,9 @@ function ShoppingCart() {
   return (
     <div className="shoppingCartContainer">
       <Header />
+      <Link to={"/"} className="backBtn">
+        Back
+      </Link>
       <div className="shoppingCartItemsListContainer">
         <div className="shoppingCartContentContainer">
           {items.map((item, index) => {

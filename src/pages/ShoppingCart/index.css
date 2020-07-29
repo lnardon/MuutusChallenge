@@ -7,6 +7,15 @@
   background-color: #171717;
 }
 
+.backBtn {
+  width: 72%;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #f1f1f1;
+  text-decoration: none;
+  margin: 1rem 0rem;
+}
+
 .shoppingCartItemsListContainer {
   display: flex;
   width: 80%;

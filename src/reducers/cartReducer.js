@@ -37,10 +37,12 @@ export default (state = INITIAL_STATE, action) => {
       }
 
     case REMOVE_FROM_CART:
+      // Checks if the item is more than once on the cart
       let index = state.items.findIndex(
         (item) => item.product.id === action.product.id
       );
       if (state.items[index].amount <= 1) {
+        // If yes, delete the item from the items array and updates the cart's total products amount
         return {
           ...state,
           total: state.total - 1,
@@ -49,6 +51,7 @@ export default (state = INITIAL_STATE, action) => {
           ),
         };
       } else {
+        // If no, decreases the amount of the product on the cart
         let index = state.items.findIndex(
           (item) => item.product.id === action.product.id
         );
