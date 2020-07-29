@@ -6,3 +6,11 @@
   width: 100%;
   background-color: #171717;
 }
+
+.comicsContainer {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

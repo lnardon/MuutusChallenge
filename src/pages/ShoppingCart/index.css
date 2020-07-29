@@ -9,10 +9,10 @@
 
 .shoppingCartItemsListContainer {
   display: flex;
-  width: 90%;
-  flex-wrap: "wrap";
-  align-items: "center";
-  justify-content: "center";
+  width: 80%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .shoppingCartContentContainer {
@@ -20,5 +20,5 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 90%;
+  width: 100%;
 }

@@ -1,12 +1,16 @@
 .shoppingCartItemContainer {
   display: flex;
+  background-color: #313131;
   width: 90%;
   height: 300px;
+  padding: 1rem;
+  margin: 0.5rem 0rem;
+  border-radius: 0.125rem;
 }
 
 .itemCoverContainer {
   display: flex;
-  width: 100%;
+  flex: 3;
 }
 
 .productCover {
@@ -14,13 +18,37 @@
 }
 
 .itemInfoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 3;
 }
 
 .itemAmountContainer {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
   width: 150px;
+}
+
+.comicTitle {
+  width: 90%;
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: #f1f1f1;
+  text-align: left;
+  margin-bottom: 1rem;
+  padding: 0px;
+}
+
+.comicPrice {
+  width: 90%;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #f1f1f1;
+  text-align: left;
 }
 
 .amountButtons {
@@ -32,6 +60,7 @@
 
 .itemDeleteContainer {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
   width: 25px;

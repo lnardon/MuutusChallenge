@@ -16,7 +16,6 @@ export default (state = INITIAL_STATE, action) => {
       let item = state.items.filter(
         (item) => item.product.id === action.product.id
       );
-      console.log(item);
       if (item.length === 0) {
         // If no, adds the item to the cart with 1 in the amount
         return {

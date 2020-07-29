@@ -2,23 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import md5 from "md5";
 
-// Redux
-import { addToCart, getNumberOfItemsInCart } from "../../actions/cart";
-
 //Components && styles
 import "./index.css";
 import Header from "../../components/Header";
 import ComicCard from "../../components/ComicCard";
 import HomeCartSidebar from "../../components/HomeCartSidebar";
-import FooterPagination from "../../components/FooterPagination";
 
 function Home() {
   // State
   const [comics, setComics] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-
-  //CONSTS
-  const dispatch = useDispatch();
 
   // Responsible for fetching the first comic list when the page loads.
   useEffect(() => {
@@ -37,25 +29,16 @@ function Home() {
       setComics(parsedResponse.data.results);
     };
     fetchData();
-  }, [currentPage]);
+  }, []);
 
   return (
     <div className="homeContainer">
       <Header />
-      <div
-        style={{
-          display: "flex",
-          width: "90%",
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <div className="comicsContainer">
         {comics.map((comic, index) => {
           return <ComicCard key={index} product={comic} />;
         })}
       </div>
-      <FooterPagination pages={[1, 2, 3, 4]} />
     </div>
   );
 }

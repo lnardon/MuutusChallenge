@@ -15,8 +15,8 @@ const ShoppingCartItem = ({ item, amount }) => {
         />
       </div>
       <div className="itemInfoContainer">
-        <h2>{item.title}</h2>
-        <h3>{item.prices[0].price}</h3>
+        <h2 className="comicTitle">{item.title}</h2>
+        <h3 className="comicPrice">${item.prices[0].price}</h3>
       </div>
       <div className="itemAmountContainer">
         <div className="amountButtons">
