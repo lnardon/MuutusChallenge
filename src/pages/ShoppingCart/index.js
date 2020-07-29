@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 // Components && Style
 import "./index.css";
@@ -8,15 +8,17 @@ import Header from "../../components/Header";
 import ShoppingCartItem from "../../components/ShoppingCartItem";
 
 function ShoppingCart() {
-  const items = useSelector((state) => state.cartReducer.items);
+  const [totalAmount, setTotalAmount] = useState(0);
+  const cart = useSelector((state) => state.cartReducer);
   // Gets the total amount of the cart based on the price and quantity
-  const totalAmount = (() => {
+  useEffect(() => {
     let total = 0;
-    items.forEach((item) => {
+    cart.items.forEach((item) => {
       total += item.product.prices[0].price * item.amount;
     });
-    return total;
-  })();
+    setTotalAmount(total);
+  }, [cart]);
+
   return (
     <div className="shoppingCartContainer">
       <Header />
@@ -25,7 +27,7 @@ function ShoppingCart() {
       </Link>
       <div className="shoppingCartItemsListContainer">
         <div className="shoppingCartContentContainer">
-          {items.map((item, index) => {
+          {cart.items.map((item, index) => {
             return <ShoppingCartItem key={index} item={item} />;
           })}
         </div>
@@ -36,8 +38,7 @@ function ShoppingCart() {
       </div>
       <div className="buyBtnContainer">
         <button className="buyBtn" onClick={() => alert("Successful Purchase")}>
-          {" "}
-          Finish Purchase{" "}
+          Finish Purchase
         </button>
       </div>
     </div>

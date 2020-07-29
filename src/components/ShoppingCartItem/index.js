@@ -1,12 +1,21 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import { REMOVE_FROM_CART } from "../../actions/types";
+import {
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  DECREASE_FROM_CART,
+} from "../../actions/types";
 
 import "./index.css";
 
-const ShoppingCartItem = ({ item, amount }) => {
+const ShoppingCartItem = ({ item }) => {
   const dispatch = useDispatch();
+  const amount = useSelector((state) =>
+    state.cartReducer.items.filter(
+      (cartItem) => cartItem.product.id === item.product.id
+    )
+  );
   return (
     <div className="shoppingCartItemContainer">
       <div className="itemCoverContainer">
@@ -23,9 +32,29 @@ const ShoppingCartItem = ({ item, amount }) => {
         </div>
         <div className="itemAmountContainer">
           <div className="amountButtons">
-            <button>+</button>
-            <h4>{amount}</h4>
-            <button>-</button>
+            <button
+              className="amountBtn"
+              onClick={() =>
+                dispatch({
+                  type: ADD_TO_CART,
+                  product: item.product,
+                })
+              }
+            >
+              +
+            </button>
+            <h4 className="amountDisplay">{amount[0].amount}</h4>
+            <button
+              className="amountBtn"
+              onClick={() =>
+                dispatch({
+                  type: DECREASE_FROM_CART,
+                  product: item.product,
+                })
+              }
+            >
+              -
+            </button>
           </div>
         </div>
         <div className="itemDeleteContainer">

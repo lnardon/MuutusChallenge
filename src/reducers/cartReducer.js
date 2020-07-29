@@ -1,7 +1,7 @@
 import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
-  GET_NUMBER_OF_ITEMS_IN_CART,
+  DECREASE_FROM_CART,
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -10,6 +10,7 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
+  console.log(state);
   switch (action.type) {
     case ADD_TO_CART:
       // Checks if the item already exists in the cart
@@ -37,6 +38,16 @@ export default (state = INITIAL_STATE, action) => {
       }
 
     case REMOVE_FROM_CART:
+      // Removes the select element from the array of items
+      return {
+        ...state,
+        total: state.total - 1,
+        items: state.items.filter(
+          (item) => item.product.id !== action.product.id
+        ),
+      };
+
+    case DECREASE_FROM_CART:
       // Checks if the item is more than once on the cart
       let index = state.items.findIndex(
         (item) => item.product.id === action.product.id
@@ -52,9 +63,6 @@ export default (state = INITIAL_STATE, action) => {
         };
       } else {
         // If no, decreases the amount of the product on the cart
-        let index = state.items.findIndex(
-          (item) => item.product.id === action.product.id
-        );
         let newitems = state.items;
         newitems[index].amount = newitems[index].amount - 1;
         return {
@@ -62,9 +70,6 @@ export default (state = INITIAL_STATE, action) => {
           items: newitems,
         };
       }
-
-    case GET_NUMBER_OF_ITEMS_IN_CART:
-      return state.total;
 
     default:
       return state;

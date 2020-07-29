@@ -17,6 +17,7 @@
 
 .productCover {
   height: 100%;
+  border-radius: 0.125rem;
 }
 
 .contentContainer {
@@ -25,20 +26,18 @@
   flex: 2;
   height: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   margin-left: 1rem;
 }
 
 .itemInfoContainer {
   display: flex;
-  flex: 1;
   width: 100%;
   flex-direction: column;
 }
 
 .itemAmountContainer {
   display: flex;
-  flex: 1;
   width: 100%;
   align-items: center;
   justify-content: flex-start;
@@ -69,18 +68,47 @@
   justify-content: space-between;
 }
 
+.amountBtn {
+  width: 25px;
+  height: 25px;
+  background-color: #ed1d24;
+  border: none;
+  color: #f1f1f1;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border-radius: 0.125rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.amountDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  background-color: #f1f1f1;
+  border: none;
+  color: #171717;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 0.125rem;
+}
+
 .itemDeleteContainer {
   display: flex;
-  flex: 1;
   width: 100%;
   align-items: center;
   justify-content: flex-start;
 }
 
 .removeBtn {
-  background-color: #ed1d24;
+  background-color: transparent;
   border: none;
   outline: none;
+  color: #f1f1f1;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .buyBtnContainer {
@@ -103,6 +131,7 @@
   color: #f1f1f1;
   cursor: pointer;
 }
+
 @media (max-width: 500px) {
   .shoppingCartItemContainer {
     flex-direction: column;
