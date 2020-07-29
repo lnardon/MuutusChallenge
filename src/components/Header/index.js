@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./index.css";
+import CartIcon from "../../components/CartIcon";
 
 const Header = () => {
   return (
@@ -11,6 +12,9 @@ const Header = () => {
           alt="Marvel Logo"
           className="logo"
         />
+        <div className="cartIconDiv">
+          <CartIcon />
+        </div>
       </div>
     </div>
   );

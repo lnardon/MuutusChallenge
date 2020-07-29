@@ -1,2 +1,29 @@
 .cartIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+}
+
+.cartIcon {
+  width: 35px;
+  height: 35px;
+}
+
+.cartCounter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: rgba(2, 86, 166);
+  padding: 4px 9px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #f1f1f1;
+  top: 5px;
+  right: 5px;
 }

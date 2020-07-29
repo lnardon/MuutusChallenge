@@ -1,9 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import "./index.css";
 import ComicPriceStripe from "../../components/ComicPriceStripe";
+import { ADD_TO_CART } from "../../actions/types";
 
 function ComicCard({ thumbnail, title, format }) {
+  const dispatch = useDispatch();
   return (
     <div className="comicCardContainer">
       <img
@@ -21,11 +24,13 @@ function ComicCard({ thumbnail, title, format }) {
         <button
           className="ctaBtn"
           onClick={() => {
-            alert("ADDED TO CART");
+            dispatch({
+              type: ADD_TO_CART,
+              product: { thumbnail, title, format },
+            });
           }}
         >
-          {" "}
-          Add to Cart{" "}
+          Add to Cart
         </button>
       </div>
     </div>

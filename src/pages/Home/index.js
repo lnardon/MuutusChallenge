@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import md5 from "md5";
+
+// Redux
+import { addToCart, getNumberOfItemsInCart } from "../../actions/cart";
 
 //Components && styles
 import "./index.css";
@@ -9,7 +13,12 @@ import HomeCartSidebar from "../../components/HomeCartSidebar";
 import FooterPagination from "../../components/FooterPagination";
 
 function Home() {
+  // State
   const [comics, setComics] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  //CONSTS
+  const dispatch = useDispatch();
 
   // Responsible for fetching the first comic list when the page loads.
   useEffect(() => {
@@ -19,6 +28,8 @@ function Home() {
       const hash = md5(
         `${ts}73f0b9bd936095550b83a44ae0bd5b949fb9eec02883bc674f6f35a295e59e6ea3387d6d`
       );
+
+      // Fetches the Comics on the API
       const response = await fetch(
         `https://gateway.marvel.com:443/v1/public/comics?ts=${ts}&apikey=2883bc674f6f35a295e59e6ea3387d6d&hash=${hash}`
       );
@@ -26,7 +37,7 @@ function Home() {
       setComics(parsedResponse.data.results);
     };
     fetchData();
-  }, []);
+  }, [currentPage]);
 
   return (
     <div className="homeContainer">
@@ -51,7 +62,6 @@ function Home() {
           );
         })}
       </div>
-      {/* <HomeCartSidebar /> */}
       <FooterPagination pages={[1, 2, 3, 4]} />
     </div>
   );
