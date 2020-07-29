@@ -6,7 +6,6 @@ import md5 from "md5";
 import "./index.css";
 import Header from "../../components/Header";
 import ComicCard from "../../components/ComicCard";
-import HomeCartSidebar from "../../components/HomeCartSidebar";
 
 function Home() {
   // State

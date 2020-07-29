@@ -1,5 +1,7 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+
+import { REMOVE_FROM_CART } from "../../actions/types";
 
 import "./index.css";
 
@@ -9,24 +11,36 @@ const ShoppingCartItem = ({ item, amount }) => {
     <div className="shoppingCartItemContainer">
       <div className="itemCoverContainer">
         <img
-          src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+          src={`${item.product.thumbnail.path}.${item.product.thumbnail.extension}`}
           alt="Cover"
           className="productCover"
         />
       </div>
-      <div className="itemInfoContainer">
-        <h2 className="comicTitle">{item.title}</h2>
-        <h3 className="comicPrice">${item.prices[0].price}</h3>
-      </div>
-      <div className="itemAmountContainer">
-        <div className="amountButtons">
-          <button>+</button>
-          <h4>{amount}</h4>
-          <button>-</button>
+      <div className="contentContainer">
+        <div className="itemInfoContainer">
+          <h2 className="comicTitle">{item.product.title}</h2>
+          <h3 className="comicPrice">${item.product.prices[0].price}</h3>
         </div>
-      </div>
-      <div className="itemDeleteContainer">
-        <button>x</button>
+        <div className="itemAmountContainer">
+          <div className="amountButtons">
+            <button>+</button>
+            <h4>{amount}</h4>
+            <button>-</button>
+          </div>
+        </div>
+        <div className="itemDeleteContainer">
+          <button
+            className="removeBtn"
+            onClick={() =>
+              dispatch({
+                type: REMOVE_FROM_CART,
+                product: item.product,
+              })
+            }
+          >
+            Remove
+          </button>
+        </div>
       </div>
     </div>
   );

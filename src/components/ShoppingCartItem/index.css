@@ -1,6 +1,7 @@
 .shoppingCartItemContainer {
   display: flex;
-  background-color: #313131;
+  align-items: center;
+  background-color: #232323;
   width: 90%;
   height: 300px;
   padding: 1rem;
@@ -10,24 +11,37 @@
 
 .itemCoverContainer {
   display: flex;
+  flex: 1;
+  height: 100%;
 }
 
 .productCover {
   height: 100%;
 }
 
-.itemInfoContainer {
+.contentContainer {
   display: flex;
   flex-direction: column;
+  flex: 2;
+  height: 100%;
   align-items: center;
   justify-content: center;
+  margin-left: 1rem;
+}
+
+.itemInfoContainer {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
 }
 
 .itemAmountContainer {
   display: flex;
+  flex: 1;
+  width: 100%;
   align-items: center;
-  justify-content: center;
-  width: 150px;
+  justify-content: flex-start;
 }
 
 .comicTitle {
@@ -50,14 +64,33 @@
 
 .amountButtons {
   display: flex;
-  width: 100%;
+  width: 100px;
   align-items: center;
   justify-content: space-between;
 }
 
 .itemDeleteContainer {
   display: flex;
+  flex: 1;
+  width: 100%;
   align-items: center;
-  justify-content: center;
-  width: 25px;
+  justify-content: flex-start;
+}
+
+.removeBtn {
+  background-color: red;
+  border: none;
+  outline: none;
+}
+
+@media (max-width: 500px) {
+  .shoppingCartItemContainer {
+    flex-direction: column;
+  }
+
+  ..productCover {
+    width: 100%;
+
+    height: auto;
+  }
 }

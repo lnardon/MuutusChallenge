@@ -29,7 +29,7 @@ export default (state = INITIAL_STATE, action) => {
           (item) => item.product.id === action.product.id
         );
         let newitems = state.items;
-        newitems[index].amount = newitems[index].amount++;
+        newitems[index].amount = newitems[index].amount + 1;
         return {
           ...state,
           items: newitems,
@@ -37,7 +37,10 @@ export default (state = INITIAL_STATE, action) => {
       }
 
     case REMOVE_FROM_CART:
-      if (state.items.product.amount === 1) {
+      let index = state.items.findIndex(
+        (item) => item.product.id === action.product.id
+      );
+      if (state.items[index].amount <= 1) {
         return {
           ...state,
           total: state.total - 1,
@@ -46,9 +49,14 @@ export default (state = INITIAL_STATE, action) => {
           ),
         };
       } else {
+        let index = state.items.findIndex(
+          (item) => item.product.id === action.product.id
+        );
+        let newitems = state.items;
+        newitems[index].amount = newitems[index].amount - 1;
         return {
           ...state,
-          items: [...state.items, action.product],
+          items: newitems,
         };
       }
 
