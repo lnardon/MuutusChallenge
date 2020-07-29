@@ -1,0 +1,38 @@
+.shoppingCartItemContainer {
+  display: flex;
+  width: 90%;
+  height: 300px;
+}
+
+.itemCoverContainer {
+  display: flex;
+  width: 100%;
+}
+
+.productCover {
+  height: 100%;
+}
+
+.itemInfoContainer {
+}
+
+.itemAmountContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+}
+
+.amountButtons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.itemDeleteContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+}

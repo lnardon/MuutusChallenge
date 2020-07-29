@@ -5,18 +5,18 @@ import "./index.css";
 import ComicPriceStripe from "../../components/ComicPriceStripe";
 import { ADD_TO_CART } from "../../actions/types";
 
-function ComicCard({ thumbnail, title, format }) {
+function ComicCard({ product }) {
   const dispatch = useDispatch();
   return (
     <div className="comicCardContainer">
       <img
-        src={`${thumbnail.path}.${thumbnail.extension}`}
+        src={`${product.thumbnail.path}.${product.thumbnail.extension}`}
         alt="Comic Cover"
         className="comicCardCoverImage"
       />
       <div className="comicInfo">
-        <h2 className="comicTitle">{title}</h2>
-        {format.map((info, index) => {
+        <h2 className="comicTitle">{product.title}</h2>
+        {product.prices.map((info, index) => {
           return (
             <ComicPriceStripe type={info.type} price={info.price} key={index} />
           );
@@ -26,7 +26,7 @@ function ComicCard({ thumbnail, title, format }) {
           onClick={() => {
             dispatch({
               type: ADD_TO_CART,
-              product: { thumbnail, title, format },
+              product,
             });
           }}
         >

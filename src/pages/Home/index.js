@@ -52,14 +52,7 @@ function Home() {
         }}
       >
         {comics.map((comic, index) => {
-          return (
-            <ComicCard
-              key={index}
-              thumbnail={comic.thumbnail}
-              title={comic.title}
-              format={comic.prices}
-            />
-          );
+          return <ComicCard key={index} product={comic} />;
         })}
       </div>
       <FooterPagination pages={[1, 2, 3, 4]} />
