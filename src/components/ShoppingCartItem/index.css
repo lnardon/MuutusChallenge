@@ -78,17 +78,37 @@
 }
 
 .removeBtn {
-  background-color: red;
+  background-color: #ed1d24;
   border: none;
   outline: none;
 }
 
+.buyBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 72%;
+  margin: 1rem 0rem;
+}
+
+.buyBtn {
+  background-color: rgb(2, 86, 166);
+  width: 250px;
+  height: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 0.125rem;
+  padding: 0.125rem;
+  color: #f1f1f1;
+  cursor: pointer;
+}
 @media (max-width: 500px) {
   .shoppingCartItemContainer {
     flex-direction: column;
   }
 
-  ..productCover {
+  .productCover {
     width: 100%;
 
     height: auto;
