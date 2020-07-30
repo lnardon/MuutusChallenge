@@ -23,7 +23,7 @@ function ShoppingCart() {
     <div className="shoppingCartContainer">
       <Header />
       <Link to={"/"} className="backBtn">
-        Go Back
+        {`< Go Back`}
       </Link>
       <div className="shoppingCartItemsListContainer">
         <div className="shoppingCartContentContainer">
