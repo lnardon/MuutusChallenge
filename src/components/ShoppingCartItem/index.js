@@ -27,7 +27,7 @@ const ShoppingCartItem = ({ item }) => {
       </div>
       <div className="contentContainer">
         <div className="itemInfoContainer">
-          <h2 className="comicTitle">{item.product.title}</h2>
+          <h2 className="comicCartTitle">{item.product.title}</h2>
           <h3 className="comicPrice">${item.product.prices[0].price}</h3>
         </div>
         <div className="itemAmountContainer">
