@@ -1,6 +1,6 @@
 # Muutus Challenge
 
-The Coding Challenge given to me was to create a basic e-commerce website with the Marvel API. In this challenge I implemented a the products page, and a fully functional cart page.
+The Coding Challenge given to me was to create a basic e-commerce website with the Marvel API. In this challenge I implemented the products page, and a fully functional cart page.
 
 <p align="center">
   <img src="./demo.gif">
